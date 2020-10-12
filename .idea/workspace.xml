@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="525a13c8-d6f2-4595-88e4-0515fe1debc9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/project-root/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/project-root/vendor/composer" />
+      <path value="$PROJECT_DIR$/project-root/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/project-root/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/project-root/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/project-root/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/project-root/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/project-root/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/project-root/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/project-root/vendor/kint-php/kint" />
+      <path value="$PROJECT_DIR$/project-root/vendor/mikey179/vfsstream" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/project-root/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/project-root/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/project-root/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/project-root/vendor/codeigniter4/framework" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/project-root/vendor/phpdocumentor/reflection-common" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ik0ExJYDXrBaSg2FxDQw7Y5U28" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project-root/app/Views/task" />
+      <recent name="$PROJECT_DIR$/project-root/app/Views" />
+      <recent name="$PROJECT_DIR$/project-root/app/Controllers/Task" />
+      <recent name="$PROJECT_DIR$/project-root" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="525a13c8-d6f2-4595-88e4-0515fe1debc9" name="Default Changelist" comment="" />
+      <created>1602436175415</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602436175415</updated>
+      <workItem from="1602436176577" duration="2100000" />
+      <workItem from="1602471857629" duration="6034000" />
+      <workItem from="1602478065204" duration="7767000" />
+      <workItem from="1602499679074" duration="4469000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2394" y="264" width="405" height="241" key="#Composer" timestamp="1602473548347">
+      <screen x="1920" y="0" width="1360" height="768" />
+    </state>
+    <state x="2394" y="264" width="405" height="241" key="#Composer/0.0.1920.1043/1920.0.1360.768@1920.0.1360.768" timestamp="1602473548347" />
+    <state x="780" y="320" width="347" height="405" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602501987001">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="780" y="320" width="347" height="405" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602501987001" />
+    <state x="743" y="266" width="428" height="513" key="FileChooserDialogImpl" timestamp="1602506838316">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="743" y="266" width="428" height="513" key="FileChooserDialogImpl/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602506838316" />
+    <state x="777" y="448" width="359" height="149" key="NewPhpFileDialog" timestamp="1602501155713">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="777" y="448" width="359" height="149" key="NewPhpFileDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602501155713" />
+    <state x="2096" y="20" key="SettingsEditor" timestamp="1602478051244">
+      <screen x="1920" y="0" width="1360" height="768" />
+    </state>
+    <state x="2096" y="20" key="SettingsEditor/0.0.1920.1043/1920.0.1360.768@1920.0.1360.768" timestamp="1602478051244" />
+    <state x="484" y="121" width="949" height="921" key="search.everywhere.popup" timestamp="1602479445789">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="484" y="121" width="949" height="921" key="search.everywhere.popup/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602479445789" />
+    <state x="2263" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1920.1043/1920.0.1360.768@1920.0.1360.768" timestamp="1602477904013" />
+  </component>
+</project>
