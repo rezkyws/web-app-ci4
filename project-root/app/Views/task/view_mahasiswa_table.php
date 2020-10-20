@@ -20,13 +20,14 @@
             <?php foreach ($mahasiswa as $m) : ?>
             <tr>
                 <th scope="row"><?= $i++; ?></th>
-                <td><?= $m['nama']; ?></td>
-                <td><?= $m['nim']; ?></td>
-                <td><?= $m['kelas']; ?></td>
-                <td><?= $m['alamat']; ?></td>
+                <td><?= $m->nama; ?></td>
+                <td><?= $m->nim; ?></td>
+                <td><?= $m->kelas; ?></td>
+                <td><?= $m->alamat; ?></td>
             </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
+        <a href="/taskfour" type="button" class="btn btn-primary">Add data</a>
     </div>
 <?= $this->endSection('content'); ?>

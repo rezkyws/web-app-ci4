@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/task1">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/task1/tasktwo">Tabel 1</a>
+                <a class="nav-link" href="/tasktwo">Tabel 1</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/task1/taskthree">Tabel 2</a>
+                <a class="nav-link" href="/taskthree">Tabel 2</a>
             </li>
         </ul>
     </div>

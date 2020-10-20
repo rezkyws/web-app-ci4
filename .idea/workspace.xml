@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="525a13c8-d6f2-4595-88e4-0515fe1debc9" name="Default Changelist" comment="" />
+    <list default="true" id="525a13c8-d6f2-4595-88e4-0515fe1debc9" name="Default Changelist" comment="First commit with task one added">
+      <change afterPath="$PROJECT_DIR$/project-root/app/Views/task/create_mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Config/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Controllers/Task/TaskOne.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Controllers/Task/cTaskOne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Models/MahasiswaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Models/mMahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Views/layout/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Views/layout/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Views/task/task_one.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Views/task/view_hello_world.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Views/task/task_three.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Views/task/view_mahasiswa_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-root/app/Views/task/task_two.php" beforeDir="false" afterPath="$PROJECT_DIR$/project-root/app/Views/task/view_empty_table.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +99,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bem/nuthink-news-remake" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -95,34 +123,76 @@
       <workItem from="1602436176577" duration="2100000" />
       <workItem from="1602471857629" duration="6034000" />
       <workItem from="1602478065204" duration="7767000" />
-      <workItem from="1602499679074" duration="4469000" />
+      <workItem from="1602499679074" duration="5064000" />
+      <workItem from="1602560228352" duration="1123000" />
+      <workItem from="1603016726833" duration="647000" />
+      <workItem from="1603165365093" duration="11708000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit with task one added">
+      <created>1602506897406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602506897406</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit with task one added" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit with task one added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2394" y="264" width="405" height="241" key="#Composer" timestamp="1602473548347">
       <screen x="1920" y="0" width="1360" height="768" />
     </state>
     <state x="2394" y="264" width="405" height="241" key="#Composer/0.0.1920.1043/1920.0.1360.768@1920.0.1360.768" timestamp="1602473548347" />
-    <state x="780" y="320" width="347" height="405" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602501987001">
+    <state x="327" y="375" width="1260" height="294" key="#SQL_Dialects" timestamp="1603177047089">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="780" y="320" width="347" height="405" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602501987001" />
-    <state x="743" y="266" width="428" height="513" key="FileChooserDialogImpl" timestamp="1602506838316">
+    <state x="327" y="375" width="1260" height="294" key="#SQL_Dialects/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1603177047089" />
+    <state x="555" y="184" width="804" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603176682945">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="743" y="266" width="428" height="513" key="FileChooserDialogImpl/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602506838316" />
-    <state x="777" y="448" width="359" height="149" key="NewPhpFileDialog" timestamp="1602501155713">
+    <state x="555" y="184" width="804" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1603176682945" />
+    <state x="780" y="320" width="347" height="405" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603166306866">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="777" y="448" width="359" height="149" key="NewPhpFileDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602501155713" />
+    <state x="780" y="320" width="347" height="405" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1603166306866" />
+    <state x="743" y="266" width="428" height="513" key="FileChooserDialogImpl" timestamp="1603016773707">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="743" y="266" width="428" height="513" key="FileChooserDialogImpl/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1603016773707" />
+    <state x="777" y="448" width="359" height="149" key="NewPhpFileDialog" timestamp="1603172258498">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="777" y="448" width="359" height="149" key="NewPhpFileDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1603172258498" />
     <state x="2096" y="20" key="SettingsEditor" timestamp="1602478051244">
       <screen x="1920" y="0" width="1360" height="768" />
     </state>
     <state x="2096" y="20" key="SettingsEditor/0.0.1920.1043/1920.0.1360.768@1920.0.1360.768" timestamp="1602478051244" />
+    <state x="555" y="258" width="804" height="528" key="Vcs.Push.Dialog.v2" timestamp="1602507064581">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="555" y="258" width="804" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602507064581" />
+    <state x="764" y="434" width="385" height="176" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602507053857">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="764" y="434" width="385" height="176" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1043/1920.0.1360.768@0.0.1920.1043" timestamp="1602507053857" />
     <state x="484" y="121" width="949" height="921" key="search.everywhere.popup" timestamp="1602479445789">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
