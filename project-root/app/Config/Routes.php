@@ -30,14 +30,12 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-//$routes->get('/task1', 'Task/cTaskOne::index');
-//$routes->get('/task1/tasktwo', 'Task/cTaskOne::taskTwo');
-//$routes->get('/task1/taskthree', 'Task/cTaskOne::taskThree');
-$routes->get('/tasktwo', 'Task/cTaskOne::display_empty_table');
-$routes->get('/taskthree', 'Task/cTaskOne::display_mahasiswa_table');
-$routes->post('/taskfour/save', 'Task/cTaskOne::save');
-$routes->get('/taskfour', 'Task/cTaskOne::create');
-$routes->get('/', 'Task/cTaskOne::display_hello_world');
+$routes->get('/mahasiswa', 'Task\\MahasiswaController::display_mahasiswa');
+$routes->get('/mahasiswa/add', 'Task\\MahasiswaController::add');
+$routes->post('/mahasiswa/add/save', 'Task\\MahasiswaController::save');
+//$routes->get('/mahasiswa/search/(:any)', 'Task\\MahasiswaController::search');
+$routes->get('/mahasiswa/(:segment)', 'Task\\MahasiswaController::detail/$1');
+$routes->get('/', 'Task/MahasiswaController::display_dashboard');
 //$routes->get('/', 'Home::index');
 
 /**

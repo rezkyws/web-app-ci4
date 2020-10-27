@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-8">
             <h2 class="my-3">Form Add Data Mahasiswa</h2>
-            <form action="/taskfour/save" method="post">
+            <form action="/mahasiswa/add/save" method="post">
                 <?= csrf_field(); ?>
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
