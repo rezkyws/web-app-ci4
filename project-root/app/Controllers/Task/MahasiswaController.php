@@ -28,11 +28,11 @@ class mahasiswaController extends BaseController
      * Showing the Dashboard
      * @return string
      */
-    public function display_dashboard()
+    public function showDashboard()
     {
         // Title of this page
         $data = [
-            'title' => 'Hello World'
+            'title' => 'Dashboard'
         ];
 
         return view('task/v_dashboard', $data);
@@ -42,17 +42,16 @@ class mahasiswaController extends BaseController
      * Used to displaying data of mahasiswa
      * @return string
      */
-    public function display_mahasiswa()
+    public function showMahasiswa()
     {
         // Fetch mahasiswa data from database
-//        $mahasiswa = $this->mahasiswaModel->getData();
         $keywords = $this->request->getVar('keywords');
 
         if ($keywords) {
             $mahasiswa = $this->mahasiswaModel->searchData($keywords);
 
             $data = [
-                'title' => 'Tabel Mahasiswa',
+                'title' => 'Search Result',
                 'mahasiswa' => $mahasiswa
             ];
 
@@ -61,11 +60,11 @@ class mahasiswaController extends BaseController
             $mahasiswa = $this->mahasiswaModel->getData();
 
             $data = [
-                'title' => 'Tabel Mahasiswa',
+                'title' => 'Data Mahasiswa',
                 'mahasiswa' => $mahasiswa
             ];
 
-            return view('task/v_mahasiswa', $data);
+            return view('task/v_all_mahasiswa', $data);
         }
     }
 
@@ -73,13 +72,13 @@ class mahasiswaController extends BaseController
      * Will be open up form to add mahasiswa data
      * @return string
      */
-    public function add()
+    public function showFormCreateMahasiswa()
     {
         $data = [
-            'title' => 'Form Add Data Mahasiswa'
+            'title' => 'Form Add Mahasiswa'
         ];
 
-        return view('task/v_add_mahasiswa', $data);
+        return view('task/v_form_create_mahasiswa', $data);
     }
 
     /**
@@ -88,14 +87,18 @@ class mahasiswaController extends BaseController
      * The submit button is in form add mahasiswa data
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    public function save()
+    public function createMahasiswa()
     {
+        $fileFoto = $this->request->getFile('foto');
+        $fileFoto->move('img');
+        $namaFoto = $fileFoto->getName();
         // Get all data that user inputted in form add mahasiswa data
         $data = [
             'nama' => $this->request->getVar('nama'),
             'nim' => $this->request->getVar('nim'),
             'kelas' => $this->request->getVar('kelas'),
             'alamat' => $this->request->getVar('alamat'),
+            'foto' => $namaFoto
         ];
 
         $this->mahasiswaModel->insertData($data);
@@ -109,10 +112,9 @@ class mahasiswaController extends BaseController
      * @param $id
      * @return string
      */
-    public function detail($id)
+    public function showDetailMahasiswa($nim)
     {
-        // Looking a mahasiswa with the id
-        $mahasiswa = $this->mahasiswaModel->getData($id);
+        $mahasiswa = $this->mahasiswaModel->getData($nim);
 
         $data = [
             'title' => 'Detail Mahasiswa',
@@ -120,6 +122,38 @@ class mahasiswaController extends BaseController
         ];
 
         return view('task/v_detail_mahasiswa', $data);
+    }
+
+    /**
+     * Delete data of a mahasiswa
+     * @param $nim
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    public function deleteMahasiswa($nim)
+    {
+        $this->mahasiswaModel->deleteData($nim);
+
+        return redirect()->to('/mahasiswa');
+    }
+
+    /**
+     * Update data with the nim
+     * fetch all data mahasiswa with that nim
+     * nim will be false because that nim wouldn't be able to updated
+     * show the form of edit data
+     * @param false $nim
+     * @return string
+     */
+    public function updateMahasiswa($nim = false)
+    {
+        $mahasiswa = $this->mahasiswaModel->getData($nim);
+
+        $data = [
+            'title' => 'Form Edit Mahasiswa',
+            'mahasiswa' => $mahasiswa
+        ];
+
+        return view('task/v_form_update_mahasiswa', $data);
     }
 
     //--------------------------------------------------------------------

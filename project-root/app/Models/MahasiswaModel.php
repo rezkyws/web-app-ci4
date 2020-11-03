@@ -12,16 +12,18 @@ class mahasiswaModel extends Model
     protected $useTimestamps = true;
 
     // Allowing to add these fields in database
-    protected $allowedFields = ['nama', 'nim', 'kelas', 'alamat'];
+    protected $allowedFields = ['nama', 'nim', 'kelas', 'alamat', 'foto'];
 
     /**
-     * Read/view all data of mahasiswa
+     * Read/view all data of mahasiswa but also check the nim
+     * if there is nim then show detail mahasiswa with that nim
      * @param false $id
      * @return array|array[]|object[]
      */
-    public function getData($id = null)
+    public function getData($nim = null)
     {
-        if ($id == null) {
+        //show all data
+        if ($nim == null) {
             $db = Database::connect();
             $sql = 'SELECT * FROM ' . $this->table;
             $query = $db->query($sql);
@@ -29,11 +31,16 @@ class mahasiswaModel extends Model
             return $results;
         }
 
-        return $this->where(['id' => $id])->first();
+        //show detail of a mahasiswa
+        $db = Database::connect();
+        $result = $db->query("SELECT * FROM " . $this->table . " WHERE nim='$nim'");
+
+        return $result->getResult();
     }
 
     /**
      * Insert new mahasiswa data to the database
+     * but also use to update data if primary key is duplicate
      * @param $data
      */
     public function insertData($data)
@@ -42,8 +49,10 @@ class mahasiswaModel extends Model
         $nama = $data['nama'];
         $kelas = $data['kelas'];
         $alamat = $data['alamat'];
+        $foto = $data['foto'];
 
-        $this->db->query("INSERT INTO mahasiswa(nama, nim, kelas, alamat) VALUES ('$nama', '$nim', '$kelas', '$alamat')");
+        $this->db->query("INSERT INTO " . $this->table . "(nama, nim, kelas, alamat, foto) VALUES ('$nama', '$nim', '$kelas', '$alamat', '$foto') 
+        ON DUPLICATE KEY UPDATE  nama='$nama', kelas='$kelas', alamat='$alamat', foto='$foto'");
     }
 
     /**
@@ -57,5 +66,14 @@ class mahasiswaModel extends Model
         $query = $this->db->query($sql);
         $result = $query->getResult();
         return $result;
+    }
+
+    /**
+     * Delete data of a mahasiswa
+     * @param $nim
+     */
+    public function deleteData($nim)
+    {
+        $this->db->query("DELETE FROM " . $this->table . " WHERE nim='$nim'");
     }
 }

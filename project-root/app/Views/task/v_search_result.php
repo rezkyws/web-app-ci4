@@ -27,6 +27,7 @@
             <thead>
             <tr>
                 <th scope="col" class="text-center">No.</th>
+                <th scope="col">Foto</th>
                 <th scope="col">Nama</th>
                 <th scope="col">NIM</th>
                 <th scope="col">Kelas</th>
@@ -39,13 +40,14 @@
             <?php foreach ($mahasiswa as $m) : ?>
                 <tr>
                     <th scope="row" class="text-center"><?= $i++; ?>.</th>
+                    <td class="text-center"><img src="/img/<?= $m->foto; ?>" alt="" class="cover"></td>
                     <td><?= $m->nama; ?></td>
                     <td><?= $m->nim; ?></td>
                     <td><?= $m->kelas; ?></td>
                     <td><?= $m->alamat; ?></td>
                     <td>
                         <div class="text-center">
-                            <a href="/mahasiswa/<?= $m->id; ?>" type="button" class="btn btn-success">Detail</a>
+                            <a href="/mahasiswa/detail/<?= $m->nim; ?>" type="button" class="btn btn-success">Detail</a>
                         </div>
                     </td>
                 </tr>
