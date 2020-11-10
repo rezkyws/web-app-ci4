@@ -5,9 +5,8 @@ $routes = Services::routes();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
-if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
-{
-	require SYSTEMPATH . 'Config/Routes.php';
+if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
+    require SYSTEMPATH . 'Config/Routes.php';
 }
 
 /**
@@ -30,14 +29,17 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/mahasiswa', 'Task\\MahasiswaController::showMahasiswa');
+$routes->get('/mahasiswa', 'Task\\MahasiswaController::showMahasiswa', ['filter' => 'auth']);
 $routes->get('/mahasiswa/add', 'Task\\MahasiswaController::showFormCreateMahasiswa');
 $routes->post('/mahasiswa/save', 'Task\\MahasiswaController::createMahasiswa');
 $routes->get('/mahasiswa/update/(:num)', 'Task\\MahasiswaController::updateMahasiswa/$1');
 $routes->delete('/mahasiswa/delete/(:num)', 'Task\\MahasiswaController::deleteMahasiswa/$1');
 $routes->get('/mahasiswa/detail/(:segment)', 'Task\\MahasiswaController::showDetailMahasiswa/$1');
-$routes->get('/', 'Task/MahasiswaController::showDashboard');
-//$routes->get('/', 'Home::index');
+$routes->get('/login', 'Task\\LoginController::index');
+$routes->post('/login/auth', 'Task\\LoginController::auth');
+$routes->get('/logout', 'Task\\LoginController::logout');
+$routes->get('/dashboard', 'Task\\MahasiswaController::showDashboard', ['filter' => 'auth']);
+$routes->get('/', 'Home::index');
 
 /**
  * --------------------------------------------------------------------
@@ -52,7 +54,6 @@ $routes->get('/', 'Task/MahasiswaController::showDashboard');
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
-if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
-{
-	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
+    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

@@ -3,7 +3,7 @@
 use CodeIgniter\Model;
 use Config\Database;
 
-class mahasiswaModel extends Model
+class MahasiswaModel extends Model
 {
     // Defining the table name
     protected $table = 'mahasiswa';

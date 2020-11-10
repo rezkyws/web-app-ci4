@@ -6,10 +6,9 @@ namespace App\Controllers\Task;
 //to make base controller can be used in this directory
 use App\Controllers\BaseController;
 use App\Models\MahasiswaModel;
+use CodeIgniter\HTTP\RedirectResponse;
 
-//take model mahasiswa
-
-class mahasiswaController extends BaseController
+class MahasiswaController extends BaseController
 {
     // Variable that's gonna be assigned as a model and used in almost of all function
     protected $mahasiswaModel;
@@ -21,6 +20,16 @@ class mahasiswaController extends BaseController
     public function __construct()
     {
         $this->mahasiswaModel = new MahasiswaModel();
+    }
+
+    /**
+     * Checking session, prevent users
+     * access web without login first
+     */
+    public function index()
+    {
+        $session = session();
+        echo "Welcome back, " . $session->get('username');
     }
 
     /**
@@ -85,7 +94,7 @@ class mahasiswaController extends BaseController
      * Will submit and save the data that user inputted to the form
      * Will be activated when submit button clicked
      * The submit button is in form add mahasiswa data
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
     public function createMahasiswa()
     {
@@ -127,7 +136,7 @@ class mahasiswaController extends BaseController
     /**
      * Delete data of a mahasiswa
      * @param $nim
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
     public function deleteMahasiswa($nim)
     {
