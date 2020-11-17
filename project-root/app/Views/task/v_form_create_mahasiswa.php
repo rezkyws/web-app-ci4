@@ -9,7 +9,7 @@
                 <?= csrf_field(); ?>
                 <div class="form-group row">
                     <label for="nim" class="col-sm-2 col-form-label">NIM</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10 border-radius">
                         <input type="text" class="form-control" id="nim" name="nim" autofocus>
                     </div>
                 </div>

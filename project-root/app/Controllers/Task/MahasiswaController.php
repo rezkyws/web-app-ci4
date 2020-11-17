@@ -54,27 +54,66 @@ class MahasiswaController extends BaseController
     public function showMahasiswa()
     {
         // Fetch mahasiswa data from database
+//        $keywords = $this->request->getVar('keywords');
+//        $pager = \Config\Services::pager();
+
+//        if ($keywords) {
+//            $mahasiswa = $this->mahasiswaModel->searchData($keywords);
+//
+//            $data = [
+//                'title' => 'Search Result',
+//                'mahasiswa' => $mahasiswa
+//            ];
+//
+//            return view('task/v_search_result', $data);
+//        } else {
+////            $mahasiswa = $this->mahasiswaModel->getData();
+//
+//            $data = [
+//                'title' => 'Data Mahasiswa',
+//                'mahasiswa' => $this->mahasiswaModel->paginate(3, 'bootstrap'),
+//                'pager' => $this->mahasiswaModel->pager
+//            ];
+//
+//            return view('task/v_all_mahasiswa', $data);
+//        }
+
+        // Fetch mahasiswa data from database
         $keywords = $this->request->getVar('keywords');
+        $page = $this->create_paging();
+        $total = count($this->mahasiswaModel->searchData($keywords));
+
 
         if ($keywords) {
             $mahasiswa = $this->mahasiswaModel->searchData($keywords);
 
             $data = [
                 'title' => 'Search Result',
-                'mahasiswa' => $mahasiswa
+                'mahasiswa' => $mahasiswa,
+                'pager' => ceil($total/$page['jlhTampil'])
             ];
 
-            return view('task/v_search_result', $data);
         } else {
-            $mahasiswa = $this->mahasiswaModel->getData();
-
             $data = [
                 'title' => 'Data Mahasiswa',
-                'mahasiswa' => $mahasiswa
+                'mahasiswa' => $this->mahasiswaModel->getData($page['mulai'],$page['jlhTampil']),
+                'mulai' => $page['mulai'],
+                'pager' => ceil($total/$page['jlhTampil'])
             ];
-
-            return view('task/v_all_mahasiswa', $data);
         }
+        return view('task/v_all_mahasiswa', $data);
+    }
+
+    public function create_paging(){
+        $getPage = $this->request->getVar('halaman');
+        $jlhTampil = 3;
+        $page = isset($getPage) ? (int)$getPage:1;
+        $mulai = ($page>1) ? ($page * $jlhTampil) - $jlhTampil : 0;
+//        $kunci ="";
+        return [
+            'mulai' => $mulai,
+            'jlhTampil' => $jlhTampil
+        ];
     }
 
     /**
@@ -123,7 +162,8 @@ class MahasiswaController extends BaseController
      */
     public function showDetailMahasiswa($nim)
     {
-        $mahasiswa = $this->mahasiswaModel->getData($nim);
+        $page = $this->create_paging();
+        $mahasiswa = $this->mahasiswaModel->getDetailData($nim);
 
         $data = [
             'title' => 'Detail Mahasiswa',
@@ -155,7 +195,7 @@ class MahasiswaController extends BaseController
      */
     public function updateMahasiswa($nim = false)
     {
-        $mahasiswa = $this->mahasiswaModel->getData($nim);
+        $mahasiswa = $this->mahasiswaModel->getDetailData($nim);
 
         $data = [
             'title' => 'Form Edit Mahasiswa',

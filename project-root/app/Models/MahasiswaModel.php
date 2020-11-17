@@ -14,22 +14,38 @@ class MahasiswaModel extends Model
     // Allowing to add these fields in database
     protected $allowedFields = ['nama', 'nim', 'kelas', 'alamat', 'foto'];
 
+    public function getData($mulai,$btsHalaman)
+    {
+        $sql = "SELECT * FROM ".$this->table." LIMIT $mulai, $btsHalaman";
+        $query = $this->db->query($sql);
+        $results = $query->getResult('array');
+        return $results;
+    }
+
+
     /**
      * Read/view all data of mahasiswa but also check the nim
      * if there is nim then show detail mahasiswa with that nim
      * @param false $id
      * @return array|array[]|object[]
      */
-    public function getData($nim = null)
+    public function getDetailData($nim)
     {
-        //show all data
-        if ($nim == null) {
-            $db = Database::connect();
-            $sql = 'SELECT * FROM ' . $this->table;
-            $query = $db->query($sql);
-            $results = $query->getResult();
-            return $results;
-        }
+//        //show all data
+//        if ($nim == null) {
+//            $db = Database::connect();
+//            $sql = 'SELECT * FROM ' . $this->table;
+//            $query = $db->query($sql);
+//            $results = $query->getResult();
+//            return $results;
+//        }
+
+//        if($nim == null) {
+//            $sql = "SELECT * FROM ".$this->table." LIMIT $mulai, $btsHalaman";
+//            $query = $this->db->query($sql);
+//            $results = $query->getResult('array');
+//            return $results;
+//        }
 
         //show detail of a mahasiswa
         $db = Database::connect();
@@ -64,7 +80,7 @@ class MahasiswaModel extends Model
     {
         $sql = "SELECT * FROM " . $this->table . " WHERE nama LIKE '%$keywords%'";
         $query = $this->db->query($sql);
-        $result = $query->getResult();
+        $result = $query->getResult('array');
         return $result;
     }
 

@@ -22,8 +22,8 @@
         <div class="float-right">
             <a href="/mahasiswa/add" type="button" class="btn btn-primary my-3">Add Data</a>
         </div>
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-striped table-info">
+            <thead class="thead-dark">
             <tr>
                 <th scope="col" class="text-center">No.</th>
                 <th scope="col">Foto</th>
@@ -35,23 +35,32 @@
             </tr>
             </thead>
             <tbody>
-            <?php $i = 1; ?>
+            <?php $i = $mulai + 1; ?>
             <?php foreach ($mahasiswa as $m) : ?>
                 <tr>
                     <th scope="row" class="text-center"><?= $i++; ?>.</th>
-                    <td class="text-center"><img src="/img/<?= $m->foto; ?>" alt="" class="cover"></td>
-                    <td><?= $m->nama; ?></td>
-                    <td><?= $m->nim; ?></td>
-                    <td><?= $m->kelas; ?></td>
-                    <td><?= $m->alamat; ?></td>
+                    <td class="text-center"><img src="/img/<?= $m['foto']; ?>" alt="" class="cover"></td>
+                    <td><?= $m['nama']; ?></td>
+                    <td><?= $m['nim']; ?></td>
+                    <td><?= $m['kelas']; ?></td>
+                    <td><?= $m['alamat']; ?></td>
                     <td>
                         <div class="text-center">
-                            <a href="/mahasiswa/detail/<?= $m->nim; ?>" type="button" class="btn btn-success">Detail</a>
+                            <a href="/mahasiswa/detail/<?= $m['nim']; ?>" type="button" class="btn btn-success">Detail</a>
                         </div>
                     </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
+        <div class="text-center">
+            <?php
+            for ($i=1; $i<=$pager ; $i++){
+                ?>
+                <a href="?halaman=<?php echo $i; ?>"><?php echo $i; ?></a>
+                <?php
+            }
+            ?>
+        </div>
     </div>
 <?= $this->endSection('content'); ?>
