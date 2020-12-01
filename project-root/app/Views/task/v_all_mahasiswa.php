@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
     <div class="text-center mt-5 ml-5">
-        <h1>Tabel Mahasiswa</h1>
+        <h1>List Berita</h1>
     </div>
     <div class="container">
         <div class="float-left">
@@ -20,33 +20,31 @@
             </form>
         </div>
         <div class="float-right">
-            <a href="/mahasiswa/add" type="button" class="btn btn-primary my-3">Add Data</a>
+            <a href="/berita/add" type="button" class="btn btn-primary my-3">Add Data</a>
         </div>
         <table class="table table-striped table-info">
             <thead class="thead-dark">
             <tr>
                 <th scope="col" class="text-center">No.</th>
-                <th scope="col">Foto</th>
-                <th scope="col">Nama</th>
-                <th scope="col">NIM</th>
-                <th scope="col">Kelas</th>
-                <th scope="col">Alamat</th>
+                <th scope="col">Gambar</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Isi</th>
+                <th scope="col">Author</th>
                 <th scope="col" class="text-center">Action</th>
             </tr>
             </thead>
             <tbody>
             <?php $i = $mulai + 1; ?>
-            <?php foreach ($mahasiswa as $m) : ?>
+            <?php foreach ($berita as $b) : ?>
                 <tr>
                     <th scope="row" class="text-center"><?= $i++; ?>.</th>
-                    <td class="text-center"><img src="/img/<?= $m['foto']; ?>" alt="" class="cover"></td>
-                    <td><?= $m['nama']; ?></td>
-                    <td><?= $m['nim']; ?></td>
-                    <td><?= $m['kelas']; ?></td>
-                    <td><?= $m['alamat']; ?></td>
+                    <td class="text-center"><img src="/img/<?= $b['gambar']; ?>" alt="" class="cover"></td>
+                    <td><?= $b['judul']; ?></td>
+                    <td><?= $b['isi']; ?></td>
+                    <td><?= $b['author']; ?></td>
                     <td>
                         <div class="text-center">
-                            <a href="/mahasiswa/detail/<?= $m['nim']; ?>" type="button" class="btn btn-success">Detail</a>
+                            <a href="/berita/detail/<?= $b['id']; ?>" type="button" class="btn btn-success">Detail</a>
                         </div>
                     </td>
                 </tr>

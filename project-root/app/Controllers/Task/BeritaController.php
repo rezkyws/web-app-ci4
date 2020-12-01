@@ -5,13 +5,13 @@ namespace App\Controllers\Task;
 
 //to make base controller can be used in this directory
 use App\Controllers\BaseController;
-use App\Models\MahasiswaModel;
+use App\Models\BeritaModel;
 use CodeIgniter\HTTP\RedirectResponse;
 
-class MahasiswaController extends BaseController
+class BeritaController extends BaseController
 {
     // Variable that's gonna be assigned as a model and used in almost of all function
-    protected $mahasiswaModel;
+    protected $beritaModel;
 
     /**
      * An constructor to make mahasiswa model
@@ -19,7 +19,7 @@ class MahasiswaController extends BaseController
      */
     public function __construct()
     {
-        $this->mahasiswaModel = new MahasiswaModel();
+        $this->beritaModel = new BeritaModel();
     }
 
     /**
@@ -51,57 +51,60 @@ class MahasiswaController extends BaseController
      * Used to displaying data of mahasiswa
      * @return string
      */
-    public function showMahasiswa()
+    public function showBerita()
     {
-        // Fetch mahasiswa data from database
-//        $keywords = $this->request->getVar('keywords');
-//        $pager = \Config\Services::pager();
-
-//        if ($keywords) {
-//            $mahasiswa = $this->mahasiswaModel->searchData($keywords);
-//
-//            $data = [
-//                'title' => 'Search Result',
-//                'mahasiswa' => $mahasiswa
-//            ];
-//
-//            return view('task/v_search_result', $data);
-//        } else {
-////            $mahasiswa = $this->mahasiswaModel->getData();
-//
-//            $data = [
-//                'title' => 'Data Mahasiswa',
-//                'mahasiswa' => $this->mahasiswaModel->paginate(3, 'bootstrap'),
-//                'pager' => $this->mahasiswaModel->pager
-//            ];
-//
-//            return view('task/v_all_mahasiswa', $data);
-//        }
-
         // Fetch mahasiswa data from database
         $keywords = $this->request->getVar('keywords');
         $page = $this->create_paging();
-        $total = count($this->mahasiswaModel->searchData($keywords));
+        $total = count($this->beritaModel->searchData($keywords));
 
 
         if ($keywords) {
-            $mahasiswa = $this->mahasiswaModel->searchData($keywords);
+            $berita = $this->beritaModel->searchData($keywords);
 
             $data = [
                 'title' => 'Search Result',
-                'mahasiswa' => $mahasiswa,
+                'berita' => $berita,
                 'pager' => ceil($total/$page['jlhTampil'])
             ];
 
         } else {
             $data = [
-                'title' => 'Data Mahasiswa',
-                'mahasiswa' => $this->mahasiswaModel->getData($page['mulai'],$page['jlhTampil']),
+                'title' => 'Data Berita',
+                'berita' => $this->beritaModel->getData($page['mulai'],$page['jlhTampil']),
                 'mulai' => $page['mulai'],
                 'pager' => ceil($total/$page['jlhTampil'])
             ];
         }
         return view('task/v_all_mahasiswa', $data);
+    }
+
+    public function showBeritaMember()
+    {
+        // Fetch mahasiswa data from database
+        $keywords = $this->request->getVar('keywords');
+        $page = $this->create_paging();
+        $total = count($this->beritaModel->searchData($keywords));
+
+
+        if ($keywords) {
+            $berita = $this->beritaModel->searchData($keywords);
+
+            $data = [
+                'title' => 'Search Result',
+                'berita' => $berita,
+                'pager' => ceil($total/$page['jlhTampil'])
+            ];
+
+        } else {
+            $data = [
+                'title' => 'Data Berita',
+                'berita' => $this->beritaModel->getData($page['mulai'],$page['jlhTampil']),
+                'mulai' => $page['mulai'],
+                'pager' => ceil($total/$page['jlhTampil'])
+            ];
+        }
+        return view('task/v_all_mahasiswa_member', $data);
     }
 
     public function create_paging(){
@@ -120,10 +123,10 @@ class MahasiswaController extends BaseController
      * Will be open up form to add mahasiswa data
      * @return string
      */
-    public function showFormCreateMahasiswa()
+    public function showFormCreateBerita()
     {
         $data = [
-            'title' => 'Form Add Mahasiswa'
+            'title' => 'Form Add Berita'
         ];
 
         return view('task/v_form_create_mahasiswa', $data);
@@ -135,24 +138,23 @@ class MahasiswaController extends BaseController
      * The submit button is in form add mahasiswa data
      * @return RedirectResponse
      */
-    public function createMahasiswa()
+    public function createBerita()
     {
-        $fileFoto = $this->request->getFile('foto');
-        $fileFoto->move('img');
-        $namaFoto = $fileFoto->getName();
+        $fileGambar = $this->request->getFile('gambar');
+        $fileGambar->move('img');
+        $namaGambar = $fileGambar->getName();
         // Get all data that user inputted in form add mahasiswa data
         $data = [
-            'nama' => $this->request->getVar('nama'),
-            'nim' => $this->request->getVar('nim'),
-            'kelas' => $this->request->getVar('kelas'),
-            'alamat' => $this->request->getVar('alamat'),
-            'foto' => $namaFoto
+            'judul' => $this->request->getVar('judul'),
+            'isi' => $this->request->getVar('isi'),
+            'author' => $this->request->getVar('author'),
+            'gambar' => $namaGambar
         ];
 
-        $this->mahasiswaModel->insertData($data);
+        $this->beritaModel->insertData($data);
 
         // Will redirect to display mahasiswa data page
-        return redirect()->to('/mahasiswa');
+        return redirect()->to('/berita');
     }
 
     /**
@@ -160,17 +162,35 @@ class MahasiswaController extends BaseController
      * @param $id
      * @return string
      */
-    public function showDetailMahasiswa($nim)
+    public function showDetailBerita($id)
     {
         $page = $this->create_paging();
-        $mahasiswa = $this->mahasiswaModel->getDetailData($nim);
+        $berita = $this->beritaModel->getDetailData($id);
 
         $data = [
-            'title' => 'Detail Mahasiswa',
-            'mahasiswa' => $mahasiswa
+            'title' => 'Detail Berita',
+            'berita' => $berita
         ];
 
         return view('task/v_detail_mahasiswa', $data);
+    }
+
+    /**
+     * View the detail of a mahasiswa data
+     * @param $id
+     * @return string
+     */
+    public function showDetailBeritaMember($id)
+    {
+        $page = $this->create_paging();
+        $berita = $this->beritaModel->getDetailData($id);
+
+        $data = [
+            'title' => 'Detail Berita',
+            'berita' => $berita
+        ];
+
+        return view('task/v_detail_mahasiswa_member', $data);
     }
 
     /**
@@ -178,9 +198,9 @@ class MahasiswaController extends BaseController
      * @param $nim
      * @return RedirectResponse
      */
-    public function deleteMahasiswa($nim)
+    public function deleteBerita($id)
     {
-        $this->mahasiswaModel->deleteData($nim);
+        $this->beritaModel->deleteData($id);
 
         return redirect()->to('/mahasiswa');
     }
@@ -193,13 +213,13 @@ class MahasiswaController extends BaseController
      * @param false $nim
      * @return string
      */
-    public function updateMahasiswa($nim = false)
+    public function updateBerita($id = false)
     {
-        $mahasiswa = $this->mahasiswaModel->getDetailData($nim);
+        $berita = $this->beritaModel->getDetailData($id);
 
         $data = [
             'title' => 'Form Edit Mahasiswa',
-            'mahasiswa' => $mahasiswa
+            'berita' => $berita
         ];
 
         return view('task/v_form_update_mahasiswa', $data);

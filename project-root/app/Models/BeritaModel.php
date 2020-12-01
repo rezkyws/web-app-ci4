@@ -3,16 +3,16 @@
 use CodeIgniter\Model;
 use Config\Database;
 
-class MahasiswaModel extends Model
+class BeritaModel extends Model
 {
     // Defining the table name
-    protected $table = 'mahasiswa';
+    protected $table = 'berita';
 
     // Allowing to add datetime in database
     protected $useTimestamps = true;
 
     // Allowing to add these fields in database
-    protected $allowedFields = ['nama', 'nim', 'kelas', 'alamat', 'foto'];
+    protected $allowedFields = ['judul', 'isi', 'author', 'gambar'];
 
     public function getData($mulai,$btsHalaman)
     {
@@ -29,7 +29,7 @@ class MahasiswaModel extends Model
      * @param false $id
      * @return array|array[]|object[]
      */
-    public function getDetailData($nim)
+    public function getDetailData($id)
     {
 //        //show all data
 //        if ($nim == null) {
@@ -49,7 +49,7 @@ class MahasiswaModel extends Model
 
         //show detail of a mahasiswa
         $db = Database::connect();
-        $result = $db->query("SELECT * FROM " . $this->table . " WHERE nim='$nim'");
+        $result = $db->query("SELECT * FROM " . $this->table . " WHERE id='$id'");
 
         return $result->getResult();
     }
@@ -61,14 +61,13 @@ class MahasiswaModel extends Model
      */
     public function insertData($data)
     {
-        $nim = $data['nim'];
-        $nama = $data['nama'];
-        $kelas = $data['kelas'];
-        $alamat = $data['alamat'];
-        $foto = $data['foto'];
+        $judul = $data['judul'];
+        $isi = $data['isi'];
+        $author = $data['author'];
+        $gambar = $data['gambar'];
 
-        $this->db->query("INSERT INTO " . $this->table . "(nama, nim, kelas, alamat, foto) VALUES ('$nama', '$nim', '$kelas', '$alamat', '$foto') 
-        ON DUPLICATE KEY UPDATE  nama='$nama', kelas='$kelas', alamat='$alamat', foto='$foto'");
+        $this->db->query("INSERT INTO " . $this->table . "(judul, isi, author, gambar) VALUES ('$judul', '$isi', '$author', '$gambar') 
+        ON DUPLICATE KEY UPDATE  judul='$judul', isi='$isi', author='$author', gambar='$gambar'");
     }
 
     /**
@@ -78,7 +77,7 @@ class MahasiswaModel extends Model
      */
     public function searchData($keywords)
     {
-        $sql = "SELECT * FROM " . $this->table . " WHERE nama LIKE '%$keywords%'";
+        $sql = "SELECT * FROM " . $this->table . " WHERE judul LIKE '%$keywords%'";
         $query = $this->db->query($sql);
         $result = $query->getResult('array');
         return $result;
@@ -88,8 +87,8 @@ class MahasiswaModel extends Model
      * Delete data of a mahasiswa
      * @param $nim
      */
-    public function deleteData($nim)
+    public function deleteData($id)
     {
-        $this->db->query("DELETE FROM " . $this->table . " WHERE nim='$nim'");
+        $this->db->query("DELETE FROM " . $this->table . " WHERE nim='$id'");
     }
 }

@@ -29,16 +29,18 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/mahasiswa', 'Task\\MahasiswaController::showMahasiswa', ['filter' => 'auth']);
-$routes->get('/mahasiswa/add', 'Task\\MahasiswaController::showFormCreateMahasiswa');
-$routes->post('/mahasiswa/save', 'Task\\MahasiswaController::createMahasiswa');
-$routes->get('/mahasiswa/update/(:num)', 'Task\\MahasiswaController::updateMahasiswa/$1');
-$routes->delete('/mahasiswa/delete/(:num)', 'Task\\MahasiswaController::deleteMahasiswa/$1');
-$routes->get('/mahasiswa/detail/(:segment)', 'Task\\MahasiswaController::showDetailMahasiswa/$1');
+$routes->get('/berita', 'Task\\BeritaController::showBerita', ['filter' => 'auth']);
+$routes->get('/user', 'Task\\BeritaController::showBeritaMember');
+$routes->get('/berita/add', 'Task\\BeritaController::showFormCreateBerita');
+$routes->post('/berita/save', 'Task\\BeritaController::createBerita');
+$routes->get('/berita/update/(:num)', 'Task\\BeritaController::updateBerita/$1');
+$routes->delete('/berita/delete/(:num)', 'Task\\BeritaController::deleteBerita/$1');
+$routes->get('/berita/detail_member/(:num)', 'Task\\BeritaController::showDetailBeritaMember/$1');
+$routes->get('/berita/detail/(:segment)', 'Task\\BeritaController::showDetailBerita/$1');
 $routes->get('/login', 'Task\\LoginController::index');
 $routes->post('/login/auth', 'Task\\LoginController::auth');
 $routes->get('/logout', 'Task\\LoginController::logout');
-$routes->get('/dashboard', 'Task\\MahasiswaController::showDashboard', ['filter' => 'auth']);
+$routes->get('/dashboard', 'Task\\BeritaController::showDashboard', ['filter' => 'auth']);
 $routes->get('/', 'Home::index');
 
 /**
